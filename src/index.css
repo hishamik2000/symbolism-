@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-arabic-serif: 'Amiri', 'Noto Serif Arabic', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-serif-display {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.04em;
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-arabic-art {
+  font-family: 'Amiri', 'Noto Serif Arabic', serif;
+  font-feature-settings: "cv01", "cv02", "liga", "clig", "calt";
+  direction: rtl;
+  text-align: right;
+}
+
+.font-arabic-heading {
+  font-family: 'Noto Serif Arabic', 'Amiri', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Strict Right-to-Left formatting for Arabic text blocks */
+.arabic-rtl {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: isolate;
+  font-family: 'Amiri', 'Noto Serif Arabic', serif;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Custom print styles for direct browser print */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
